@@ -315,7 +315,7 @@ NSString * const kBAFluidViewCMMotionUpdate = @"BAFluidViewCMMotionUpdate";
         horizontalAnimation.values = @[@(self.lineLayer.position.x-self.waveLength*2),@(self.lineLayer.position.x-self.waveLength)];
         
         
-        horizontalAnimation.duration = 1.0;
+        horizontalAnimation.duration = horizontalAnimationDuration;
         horizontalAnimation.repeatCount = HUGE;
         horizontalAnimation.removedOnCompletion = NO;
         horizontalAnimation.fillMode = kCAFillModeForwards;
@@ -325,7 +325,7 @@ NSString * const kBAFluidViewCMMotionUpdate = @"BAFluidViewCMMotionUpdate";
         self.waveCrestAnimation = [CAKeyframeAnimation animationWithKeyPath:@"path"];
         self.waveCrestAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
         self.waveCrestAnimation.values = [self getBezierPathValues];
-        self.waveCrestAnimation.duration = 0.5;
+        self.waveCrestAnimation.duration = horizontalAnimationDuration * 0.5;
         self.waveCrestAnimation.removedOnCompletion = NO;
         self.waveCrestAnimation.fillMode = kCAFillModeForwards;
         self.waveCrestAnimation.delegate = self;

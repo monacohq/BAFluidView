@@ -72,6 +72,12 @@ Changes the fill color of the wave animation
 @property (assign,nonatomic) int minAmplitude;
 
 /**
+ Changes the horizontal animation duration
+ */
+
+@property (assign,nonatomic) CGFloat horizontalAnimationDuration;
+
+/**
  Notification message string for tilt animations
  */
 extern NSString * const kBAFluidViewCMMotionUpdate;
